@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="popup.css"/>
+<title>Coletor Universal de E-mails</title>
+</head>
+<body>
+<div class="container">
+  <h1>Coletor de E-mails</h1>
+  <div class="section">
+    <label>
+      <input type="checkbox" id="autoMode" /> Modo automático (nova aba em segundo plano)
+    </label>
+  </div>
+  <div id="manualFields">
+    <input id="keyword" type="text" placeholder="Palavra-chave" />
+    <input id="site" type="text" placeholder="Site (ex: facebook.com)" />
+    <button id="start">Iniciar Busca</button>
+  </div>
+  <div id="autoFields" style="display:none">
+    <textarea id="keywords" placeholder="Múltiplas palavras-chave (uma por linha)"></textarea>
+    <input id="siteAuto" type="text" placeholder="Site (ex: facebook.com)" />
+    <div class="auto-buttons">
+      <button id="startAuto">Iniciar Coleta Automática</button>
+      <button id="stopAuto" style="display:none" class="btn-stop">Parar</button>
+      <button id="resumeAuto" style="display:none" class="btn-resume">Retomar (CAPTCHA resolvido)</button>
+    </div>
+  </div>
+  <h2>Emails Coletados:</h2>
+  <textarea id="results" readonly></textarea>
+  <div class="buttons">
+    <button id="next">Próxima Página</button>
+    <button id="clear">Limpar Resultados</button>
+    <button id="download">Salvar TXT</button>
+  </div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

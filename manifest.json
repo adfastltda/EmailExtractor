@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Coletor Automático de E-mails Universal",
+  "version": "6.0",
+  "description": "Coleta emails de qualquer site visível na página ou na SERP do Google.",
+  "permissions": ["storage", "tabs", "scripting", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "service_worker.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Coletor de E-mails" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
